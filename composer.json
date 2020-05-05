@@ -1,0 +1,13 @@
+{
+    "require": {
+        "rakit/validation": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Application\\": "app/"
+          }        
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}

@@ -1,0 +1,43 @@
+version: '3'
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: my-project
+    container_name: app
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3000:3000"
+    working_dir: /app
+    volumes:
+      - ./containers/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - app-network
+    depends_on: 
+      - db
+
+  db:
+    image: mysql:8.0
+    container_name: db
+    restart: unless-stopped
+    tty: true
+    command: --init-file /data/application/init.sql
+    ports:
+      - "3308:3308"
+    environment:
+      MYSQL_DATABASE: "test"
+      MYSQL_USER: "test"
+      MYSQL_PASSWORD: "qwerty"
+      MYSQL_ROOT_PASSWORD: "qwerty"
+    volumes:
+      - ./containers/mysql/my.cnf:/etc/mysql/my.cnf
+      - ./containers/mysql/init.sql:/data/application/init.sql
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

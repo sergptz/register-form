@@ -1,0 +1,78 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.register-form {
+    max-width: 600px;
+    margin: auto;
+}
+
+.password-rules {
+    background-color: #f6f6f6;
+}
+
+.circle {
+    height: 9px;
+    width:  9px;
+    margin-right: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #c1c1c1;
+    transition: background-color .25s ease-in;
+}
+
+.circle.valid {
+    background-color: #80bdff;
+}
+
+.password-rule > *{
+    font-size: .8rem;
+    transition: color .15s ease-in, font-size .15s ease-in-out;
+}
+
+.invalid {
+    color: #dc3545;
+}
+
+body {
+    background: linear-gradient(66deg,#002f90,#0084e8 19%,#8932c0 48%,#ff7757) no-repeat;
+}
+
+.bigger-rule-text {
+    font-size: 0.9rem;
+}
+
+.lang-icon {
+    height: 25px;
+    width: auto;
+}
+
+.login-form {
+    max-width: 500px;
+    margin: auto;
+}
+
+.input-file {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.profile-block {
+    min-height: 500px;
+}
+
+.avatar-img {
+    width: 75%;
+    user-select: none;
+    -webkit-box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
+}
+
